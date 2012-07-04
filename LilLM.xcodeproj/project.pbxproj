@@ -1,0 +1,208 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0FCB4A515A3C1F60031D3D5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0FCB4A415A3C1F60031D3D5 /* main.cpp */; };
+		D0FCB4A715A3C1F60031D3D5 /* LilLM.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0FCB4A615A3C1F60031D3D5 /* LilLM.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0FCB49E15A3C1F60031D3D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				D0FCB4A715A3C1F60031D3D5 /* LilLM.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D0FCB4A015A3C1F60031D3D5 /* LilLM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LilLM; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FCB4A415A3C1F60031D3D5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D0FCB4A615A3C1F60031D3D5 /* LilLM.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LilLM.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0FCB49D15A3C1F60031D3D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0FCB49515A3C1F60031D3D5 = {
+			isa = PBXGroup;
+			children = (
+				D0FCB4A315A3C1F60031D3D5 /* LilLM */,
+				D0FCB4A115A3C1F60031D3D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0FCB4A115A3C1F60031D3D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0FCB4A015A3C1F60031D3D5 /* LilLM */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0FCB4A315A3C1F60031D3D5 /* LilLM */ = {
+			isa = PBXGroup;
+			children = (
+				D0FCB4A415A3C1F60031D3D5 /* main.cpp */,
+				D0FCB4A615A3C1F60031D3D5 /* LilLM.1 */,
+			);
+			path = LilLM;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0FCB49F15A3C1F60031D3D5 /* LilLM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FCB4AA15A3C1F60031D3D5 /* Build configuration list for PBXNativeTarget "LilLM" */;
+			buildPhases = (
+				D0FCB49C15A3C1F60031D3D5 /* Sources */,
+				D0FCB49D15A3C1F60031D3D5 /* Frameworks */,
+				D0FCB49E15A3C1F60031D3D5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LilLM;
+			productName = LilLM;
+			productReference = D0FCB4A015A3C1F60031D3D5 /* LilLM */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0FCB49715A3C1F60031D3D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = D0FCB49A15A3C1F60031D3D5 /* Build configuration list for PBXProject "LilLM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0FCB49515A3C1F60031D3D5;
+			productRefGroup = D0FCB4A115A3C1F60031D3D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0FCB49F15A3C1F60031D3D5 /* LilLM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0FCB49C15A3C1F60031D3D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FCB4A515A3C1F60031D3D5 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D0FCB4A815A3C1F60031D3D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D0FCB4A915A3C1F60031D3D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D0FCB4AB15A3C1F60031D3D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D0FCB4AC15A3C1F60031D3D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0FCB49A15A3C1F60031D3D5 /* Build configuration list for PBXProject "LilLM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FCB4A815A3C1F60031D3D5 /* Debug */,
+				D0FCB4A915A3C1F60031D3D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FCB4AA15A3C1F60031D3D5 /* Build configuration list for PBXNativeTarget "LilLM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FCB4AB15A3C1F60031D3D5 /* Debug */,
+				D0FCB4AC15A3C1F60031D3D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0FCB49715A3C1F60031D3D5 /* Project object */;
+}
