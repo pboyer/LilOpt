@@ -1,0 +1,60 @@
+TLilLM
+v5
+r1
+cCheck dependencies
+cCompileC DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.o /Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/LilLM normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
+c000000004F29C61A00000000000000EE
+t1328137754
+s238
+
+N/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/LilLM.LinkFileList
+c000000004FF38B320000000000000083
+t1341360946
+s131
+
+N/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/LilLM
+t2
+s0
+
+N/Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp
+c000000004FF38B270000000000000131
+t1341360935
+s305
+
+CBuild AST from /Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies253c35b2c2a3b541^412e41b2c2a3b541^---0#1#0#--18"Check dependencies36"21F88D3A-FF4A-4E1F-BC12-09EE44CBAA1B-
+
+CCompileC DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.o /Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s363053746.257277
+e363053748.075666
+r1
+xCompileC
+xDerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.o
+x/Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/peter/Dropbox/Github/LilLM/LilLM/main.cppe4f841b2c2a3b541^dd6113b4c2a3b541^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp0000000000000000^2579"CompileC DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.o LilLM/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/peter/Dropbox/Github/LilLM    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wno-newline-eof -Wc++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-conversion -Wno-sign-conversion -iquote /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/LilLM-generated-files.hmap -I/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/LilLM-own-target-headers.hmap -I/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/LilLM-all-target-headers.hmap -iquote /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/LilLM-project-headers.hmap -I/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/include -I/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/DerivedSources/x86_64 -I/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/DerivedSources -F/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug -MMD -MT dependencies -MF /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.dia -c /Users/peter/Dropbox/Github/LilLM/LilLM/main.cpp -o /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/main.o36"046BE4E6-49D9-4189-89B1-CE8033945101-
+
+CLd /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/LilLM normal x86_64
+s363053748.082482
+e363053748.483102
+r1
+xLd
+x/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/LilLM
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Link /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/LilLMfc3515b4c2a3b541^4bad7bb4c2a3b541^---0#0#0#--776"Ld DerivedData/LilLM/Build/Products/Debug/LilLM normal x86_64    cd /Users/peter/Dropbox/Github/LilLM    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -L/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug -F/Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug -filelist /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Intermediates/LilLM.build/Debug/LilLM.build/Objects-normal/x86_64/LilLM.LinkFileList -mmacosx-version-min=10.7 -o /Users/peter/Dropbox/Github/LilLM/DerivedData/LilLM/Build/Products/Debug/LilLM36"949D19DD-29B0-45BE-90B9-B97E5298E615-
+
