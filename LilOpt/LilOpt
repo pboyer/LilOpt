@@ -1,0 +1,15 @@
+
+// LilOpt Namespace
+
+#include "IFunction.h"
+#include "IErrorFunction.h"
+#include "IErrorFunctionDiff.h"
+#include "Assert.h"
+#include "ErrorFunctionNumericDiff.h"
+
+// LilOpt::Solver Namespace
+
+#include "LevenbergMarquardt.h"
+#include "GaussNewton.h"
+#include "Linear.h"
+#include "Options.h"
