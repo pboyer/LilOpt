@@ -12,6 +12,7 @@
 #include "Options.h"
 #include "Eigen/Dense"
 #include "IErrorFunctionDiff.h"
+#include <iostream>
 
 using namespace Eigen;
 
@@ -28,7 +29,7 @@ namespace LilOpt {
             LevenbergMarquardt( Options<_Scalar> options,
                                 Matrix<_Scalar, _NumParams, 1>& initialParams,
                                 IErrorFunctionDiff<_Scalar, _NumResiduals, _NumParams, _Dimension>* function, 
-                                Matrix<_Scalar, Eigen::Dynamic, _Dimension>& dataPoints):
+                                Matrix<_Scalar, _NumResiduals, _Dimension>& dataPoints):
             
                                 _Options(options), 
                                 _DataPoints(dataPoints), 
@@ -42,10 +43,15 @@ namespace LilOpt {
             bool Iterate() 
             {
                 
-                // Evaluate residuals and jacobian at _Current Params
+                // Evaluate residuals and jacobian at _CurrentParams
                 Matrix<_Scalar, _NumResiduals, _NumParams> J;
                 Matrix<_Scalar, _NumResiduals, 1>          Ep0;
                 _Function->Evaluate( _DataPoints, _CurrentParams, Ep0, J );
+                
+                std::cout << "J" << std::endl;
+                std::cout << J << std::endl << std::endl;
+                std::cout << "Ep0" << std::endl;
+                std::cout << Ep0 << std::endl << std::endl;
                 
                 // Solve for P1
                 // (J^T * J + a * diag(J^T * J) )( P1 - P0 ) = J^T * Ep0
@@ -53,7 +59,7 @@ namespace LilOpt {
                 Matrix<_Scalar, _NumParams, _NumResiduals> Jt = J.transpose();
                 Matrix<_Scalar, _NumParams, _NumParams> JtJ = Jt * J;
                 Matrix<_Scalar, _NumParams, _NumParams> JtJdiag = JtJ.diagonal().asDiagonal();
-                Matrix<_Scalar, _NumParams, 1> JtEp0 = Jt * Ep0;
+                Matrix<_Scalar, _NumParams, 1> JtEp0 = -Jt * Ep0;
                 Matrix<_Scalar, _NumParams, 1> P1mP0 = ( JtJ  + _Options.LevenbergMarquardtLambda * JtJdiag ).fullPivHouseholderQr().solve( JtEp0 );
                 Matrix<_Scalar, _NumParams, 1> P1 = P1mP0 + _CurrentParams;
                 
@@ -67,23 +73,40 @@ namespace LilOpt {
                 _Scalar Ep0Sum = Ep0.sum();
                 _Scalar Ep1Sum = Ep1.sum();
                 
+             //  DEBUG
+//                std::cout << "JtJDiag: "<< std::endl << JtJdiag << std::endl;
+                std::cout << "Ep0Sum: " << Ep0Sum << std::endl;
+                std::cout << "Ep1Sum: " << Ep1Sum << std::endl;
+                std::cout << "P1: " << std::endl << P1 << std::endl << std::endl;
+                
                 _Scalar v = _Options.LevenbergMarquardtV;
                 
-                while (Ep1Sum > Ep0Sum) 
+                unsigned its = 0;
+                
+                while (Ep1Sum > Ep0Sum && its < _Options.MaxSubIterations ) 
                 {
+                    
+                    its++;
+                    
                     // if Ep1Sum > Ep0Sum, we increase a and reevaluate
-                    _Options.LevenbergMarquartLambda *= v;
+                    _Options.LevenbergMarquardtLambda *= v;
                     
                     // Resolve for P1 with new lambda
                     P1mP0 = ( JtJ  + _Options.LevenbergMarquardtLambda * JtJdiag ).fullPivHouseholderQr().solve( JtEp0 );
                     P1 = P1mP0 + _CurrentParams;
                     
                     _Function->Evaluate( _DataPoints, P1, Ep1 );
-                    Ep1Sum = Ep1.transpose() * Ep1;
+                    Ep1Sum = Ep1.sum();
+                    
+                //  DEBUG
+                    std::cout << "Sub-Iteration: " << its << std::endl;
+                    std::cout << "Ep1Sum: " << Ep1Sum << std::endl;
+                    std::cout << "P1: " << P1 << std::endl<< std::endl;
                     
                 }
                 
-                _Options.LevenbergMarquartLambda /= v;  
+                _CurrentParams = P1;
+                _Options.LevenbergMarquardtLambda /= v;  
                 
                 return true;
             }

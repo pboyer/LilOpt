@@ -19,28 +19,23 @@ namespace LilOpt {
     
     namespace Solver {
 
-        template<typename _Scalar, unsigned int _Dimension>
+        template<typename _Scalar, unsigned int _NumResiduals, unsigned int _Dimension>
         class Linear {
-    
+            
         public:
     
-            Linear( Matrix<_Scalar, Eigen::Dynamic, _Dimension> dataPoints ):
+            Linear( Matrix<_Scalar, _NumResiduals, _Dimension> dataPoints ):
             _DataPoints(dataPoints)    
             { }
     
-            bool Regress(   Matrix<_Scalar, Eigen::Dynamic, 1>& b, 
+            bool Regress(   Matrix<_Scalar, _NumResiduals, 1>& b, 
                             Matrix<_Scalar, _Dimension, 1>& solVector ) 
             {
         
-                AssertOrExit( b.rows() == _DataPoints.rows(), 
-                             "The number of data points supplied to \
-                             Linear object must match the number \
-                             of rows of the b vector in Regression.");
-                
-                    // Solve
+                // Solve
                 // A^T * A * x = A^T * b
-                Matrix<_Scalar, Eigen::Dynamic, _Dimension>& A = _DataPoints;
-                Matrix<_Scalar, _Dimension, Eigen::Dynamic> At = A.transpose();
+                Matrix<_Scalar, _NumResiduals, _Dimension>& A = _DataPoints;
+                Matrix<_Scalar, _Dimension, _NumResiduals> At = A.transpose();
                 Matrix<_Scalar, _Dimension, 1> rhs = At*b;
                 Matrix<_Scalar, _Dimension, _Dimension> lhs = At*A;
         
@@ -51,7 +46,7 @@ namespace LilOpt {
     
         private:
     
-            Eigen::Matrix<_Scalar, Eigen::Dynamic, _Dimension> _DataPoints;
+            Eigen::Matrix<_Scalar, _NumResiduals, _Dimension> _DataPoints;
     
         };
     

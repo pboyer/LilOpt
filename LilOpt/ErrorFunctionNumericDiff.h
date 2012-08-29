@@ -15,10 +15,7 @@ namespace LilOpt {
     enum NumericDiffType { CENTERED };
 
     // Implements a function to perform centered difference evaluation of the jacobian
-    // TODO: specialize for different _NumericDiffType
-    template<   NumericDiffType _NumericDiffType, 
-                typename _FunctorType, 
-                typename _Scalar, 
+    template<   typename _Scalar, 
                 unsigned int _NumResiduals, 
                 unsigned int _NumParams, 
                 unsigned int _Dimension >
@@ -28,11 +25,8 @@ namespace LilOpt {
         
     // CONSTRUCTOR /////////////////////////
         
-        ErrorFunctionNumericDiff( _FunctorType *errorFunction ) {
+        ErrorFunctionNumericDiff( IErrorFunction<_Scalar, _NumResiduals, _NumParams, _Dimension >* errorFunction ) {
             
-            // check to make sure the error function is of appropriate type
-            // compile time error otherwise
-            IErrorFunction<_Scalar, _NumResiduals, _NumParams, _Dimension >* object = errorFunction;
             _ErrorFunction = errorFunction;
             
         }
@@ -55,11 +49,11 @@ namespace LilOpt {
             for (unsigned i = 0; i < _NumParams; i++) {
                 
                 Matrix<_Scalar, _NumParams, 1> parmsForw = parms;
-                _Scalar residualForw;
+                Matrix<_Scalar, _NumResiduals, 1> residualForw;
                 parmsForw[i] = parmsForw[i] + stepSize;
                 
                 Matrix<_Scalar, _NumParams, 1> parmsBackw = parms;
-                _Scalar residualBackw;
+                Matrix<_Scalar, _NumResiduals, 1> residualBackw;
                 parmsBackw[i] = parmsBackw[i] - stepSize;
                 
                 // Perform forward evaluation of residuals

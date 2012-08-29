@@ -25,14 +25,16 @@ namespace LilOpt {
             bool            WriteProgressToStdout;
             _Scalar         LevenbergMarquardtLambda;
             _Scalar         LevenbergMarquardtV;
+            unsigned int    MaxSubIterations;
         
             Options():  MaxIterations(10), 
             SolverType( DENSE_QR ), 
             WriteProgressToStdout(true),
             LevenbergMarquardtLambda(100),
             LevenbergMarquardtV(10),
-            Tolerance(1)
-        
+            Tolerance(1),
+            MaxSubIterations(5)
+            
             {}
             
         };
