@@ -9,5 +9,5 @@ There is an example of its usage in CircleTest.h.  In this example, it finds the
 
 I've aimed to make it as developer friendly as possible.  It's platform agnostic, although I've used xcode here (should migrate to cmake).  It's the smallest NLLS library I've seen and requires no linking to binaries (as it is header-based).  It's only dependency is the Eigen matrix library, also an open source header template library.  Making it a part of a project is as simple as:
 
-#include <LilOpt>
+"#include <LilOpt>"
 
