@@ -27,15 +27,17 @@ namespace LilOpt {
             _Scalar         LevenbergMarquardtV;
             unsigned int    MaxSubIterations;
         
-            Options():  MaxIterations(10), 
-            SolverType( DENSE_QR ), 
-            WriteProgressToStdout(true),
-            LevenbergMarquardtLambda(100),
-            LevenbergMarquardtV(10),
-            Tolerance(1),
-            MaxSubIterations(5)
+            Options():  MaxIterations(100), 
+                        SolverType( DENSE_QR ), 
+                        WriteProgressToStdout(true),
+                        LevenbergMarquardtLambda(100),
+                        LevenbergMarquardtV(10),
+                        Tolerance(1e-2),
+                        MaxSubIterations(10)
             
             {}
+            
+            
             
         };
     }

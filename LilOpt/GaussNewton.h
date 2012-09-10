@@ -27,9 +27,14 @@ namespace LilOpt {
             GaussNewton(    Options<_Scalar> options,
                             Matrix<_Scalar, _NumParams, 1>& initialParams,
                             IErrorFunctionDiff<_Scalar, _NumResiduals, _NumParams, _Dimension>* function, 
-                            Matrix<_Scalar, Eigen::Dynamic, _Dimension>& dataPoints):
-            
-                            _Options(options), _DataPoints(dataPoints), _Function(function), _CurrentParams(initialParams)  
+                            Matrix<_Scalar, Eigen::Dynamic, _Dimension>& dataPoints)
+                            :
+                            _SumResidual(-1),
+                            _LastSumResidual(-1),
+                            _Options(options), 
+                            _DataPoints(dataPoints), 
+                            _Function(function), 
+                            _CurrentParams(initialParams)  
             
             {}
             
@@ -41,11 +46,12 @@ namespace LilOpt {
                 Matrix<_Scalar, _NumResiduals, _NumParams> J;
                 Matrix<_Scalar, _NumResiduals, 1>          Ep0;
                 _Function->Evaluate(  _DataPoints, _CurrentParams, Ep0, J );
+                UpdateSumResiduals( Ep0.sum() );
                 
                 // Solve.  
                 // J^T * J ( P1 - P0 ) = J^T * Ep0
                 Matrix<_Scalar, _NumParams, _NumResiduals> Jt = J.transpose();
-                Matrix<_Scalar, _NumParams, 1> P1mP0 = ( Jt * J ).fullPivHouseholderQr().solve( Jt * Ep0 );  // TODO: allow different solver types
+                Matrix<_Scalar, _NumParams, 1> P1mP0 = ( Jt * J ).fullPivHouseholderQr().solve( - Jt * Ep0 );  
                 
                 _CurrentParams = P1mP0 + _CurrentParams;
                 
@@ -55,15 +61,31 @@ namespace LilOpt {
             bool Minimize() 
             {
                 
-                // Iterate upto MaxIterations, terminate if tolerance is matched
-                for (unsigned int i = 0; i < _Options.MaxIterations; i++) {
-                    bool result = Iterate();
-                    // TODO: check with tolerance
-                    if (!result)
-                        return result;
-                }
+                // Iterate upto MaxIterations, terminate if difference between 
+                // last and new sumResidual is less than value
+                unsigned i = 0;
+                bool iterationSuccess = true;
+                
+                do {
+                    
+                    iterationSuccess = Iterate();
+                    
+                } while (i < _Options.MaxIterations 
+                         && iterationSuccess 
+                         && abs( _LastSumResidual - _SumResidual) > _Options.Tolerance );
                 
                 return true;
+                
+            }
+            
+        // PRIVATE METHODS ///////////////////
+            
+        private:
+            
+            void UpdateSumResiduals( _Scalar newSumResidual )
+            {
+                _LastSumResidual = _SumResidual;
+                _SumResidual = newSumResidual;
             }
             
         // PUBLIC FIELDS //////////////////////
@@ -74,6 +96,8 @@ namespace LilOpt {
             
         private:
             
+            _Scalar         _SumResidual;
+            _Scalar         _LastSumResidual;
             IErrorFunctionDiff<_Scalar, _NumResiduals, _NumParams, _Dimension>* _Function;
             Eigen::Matrix<_Scalar, _NumResiduals, _Dimension> _DataPoints;
             Eigen::Matrix<_Scalar, _NumParams, 1> _CurrentParams;

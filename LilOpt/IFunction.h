@@ -20,8 +20,8 @@ namespace LilOpt {
         
     public:
     
-        virtual bool Evaluate( const Matrix<_Scalar, _NumParams, 1>& parms, 
-                          Matrix<_Scalar, _Dimension, 1> & value ) const = 0;
+        virtual bool Evaluate(  const Matrix<_Scalar, _NumParams, 1>& parms, 
+                                Matrix<_Scalar, _Dimension, 1> & value ) const = 0;
     
     };
     

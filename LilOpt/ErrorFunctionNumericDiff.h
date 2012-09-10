@@ -11,7 +11,6 @@
 
 namespace LilOpt {
 
-    // TODO: Implement forward, backward
     enum NumericDiffType { CENTERED };
 
     // Implements a function to perform centered difference evaluation of the jacobian

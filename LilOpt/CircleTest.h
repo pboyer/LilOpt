@@ -133,15 +133,13 @@ namespace CircleTest
     void test ()
     {
         // Set up the circle params
-        const unsigned int numResids = 8;
-        double noiseMax = 0;
+        const unsigned int numResids = 20;
+        double noiseMax = 0.0;
         double radius = 15.0;
-        Matrix<double, 2, 1> center(11,20);
+        Matrix<double, 2, 1> center(51,35);
         
         // Generate the circle, given the params
         Matrix<double, numResids, 2> pts = CircleTest::get2DRegularCircleWithNoise<double, numResids>(noiseMax, radius, center);
-        
-        std::cout << pts << std::endl;
 
         // Instantiate the circle function
         LilOpt::IErrorFunction<double, numResids, 3, 2>* circleFunc = new CircleFunction<double, numResids>();
