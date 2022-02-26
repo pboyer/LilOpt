@@ -6,13 +6,6 @@ LilOpt 0.1.0
 
 LilOpt is a C++, header-based non-linear least squares template library.  Think of it as a light-weight, general multi-dimensional optimization library.  LilOpt provides Levenberg-Marquardt and Gauss-Newton solvers - both industry standard.  
 
-
-### Current status
-
-
-LilOpt is undergoing major changes.  Expect the API to change rapidly.
-
-
 ### Future work
 
 
@@ -20,7 +13,7 @@ Sparse matrices - Once I add support for sparse matrices it will also be much fa
 
 Multi-threaded solving - LilOpt uses a single threaded Householder QR algorithm for solving the matrices developed on every iteration of the LM and GN algorithm.  I will eventually allow choosing between various algorithms, some of which will provide multi-threading support.  
  
- 
+
 ### Usage
 
 
